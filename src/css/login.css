@@ -1,0 +1,171 @@
+.modal-dialog.cascading-modal {
+    margin-top: 10%;
+}
+
+.modal-dialog .modal-content {
+    border: 0;
+    border-radius: .125rem;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+.modal-dialog.cascading-modal .modal-c-tabs .md-tabs{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: -1.5rem 1rem 0 1rem;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.light-blue.darken-3{
+    background-color: #0277bd !important;
+}
+
+.md-tabs{
+    position: relative;
+    z-index: 1;
+    padding: .7rem;
+    margin-right: 1rem;
+    margin-bottom: -20px;
+    margin-left: 1rem;
+    background-color: #2bbbad;
+    border: 0;
+    border-radius: .25rem;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+}
+.light-blue{
+    background-color: #03a9f4 !important;
+}
+
+.modal-dialog.cascading-modal .modal-c-tabs .md-tabs li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.waves-effect {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.modal-dialog.cascading-modal .modal-c-tabs .md-tabs li a {
+    text-align: center;
+}
+
+.md-tabs .nav-link.active, .md-tabs .nav-item.open .nav-link {
+    color: #fff;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: .25rem;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+.md-tabs .nav-link {
+    color: #fff;
+    border: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.modal-dialog.cascading-modal .modal-c-tabs .md-tabs li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.md-tabs .nav-item+.nav-item {
+    margin-left: 0;
+}
+.waves-effect {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.modal-dialog.cascading-modal .modal-c-tabs .tab-content {
+    padding: 1.7rem 0 0 0;
+}
+.tab-content {
+    padding: 1rem;
+    padding-top: 2rem;
+}
+
+.modal-dialog.cascading-modal .modal-body, .modal-dialog.cascading-modal .modal-footer {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    color: #616161;
+}
+
+.md-form {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.md-form.form-sm .prefix {
+    top: .35rem;
+    font-size: 1.5rem;
+}
+
+.md-form .prefix {
+    position: absolute;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.md-form .prefix {
+    top: .25rem;
+    font-size: 1.75rem;
+}
+
+.md-form.form-sm .prefix ~ input, .md-form.form-sm .prefix ~ textarea {
+    width: calc(100% - 2rem);
+    margin-left: 2rem;
+}
+
+.md-form.form-sm .validate {
+    margin-bottom: 2.3rem;
+}
+
+.md-form .prefix ~ input, .md-form .prefix ~ textarea {
+    width: calc(100% - 2.5rem);
+    margin-left: 2.5rem;
+}
+.md-form .validate {
+    margin-bottom: 2.5rem;
+}
+
+.md-form.form-sm .prefix ~ label {
+    margin-left: 2rem;
+}
+
+.md-form .prefix ~ label {
+    margin-left: 2.5rem;
+}
+
+.md-form.form-sm .prefix {
+    top: .35rem;
+    font-size: 1.5rem;
+}
+.blue-text {
+    color: #2196f3 !important;
+}
