@@ -25,6 +25,8 @@ import SessionList from './sessionList';
 import androidIOS from './androidIOS';
 import { faAlignLeft } from '@fortawesome/free-solid-svg-icons';
 import { getServices } from '../services/expertServices'
+import i18n from '../i18n';
+import { withNamespaces } from 'react-i18next';
 
 class Container extends Component {
 
@@ -34,6 +36,7 @@ class Container extends Component {
         currentUser: '',
         errors: {}
     };
+
 
     async componentDidMount() {
         $("#menu-toggle").click(function (e) {
@@ -76,44 +79,48 @@ class Container extends Component {
     };
 
     render() {
+        const { t } = this.props;
+        const changeLanguage = (lng) => {
+            i18n.changeLanguage(lng);
+        }
         return (
             <div className="d-flex" id="wrapper">
                 <div className="borde" id="sidebar-wrapper">
                     <div className="sidebar-heading">Start Bootstrap </div>
                     <div className="list-group list-group-flush">
                         <Link className="list-group-item list-group-item-action" to="/">
-                            Dashboard
+                            {t('Dashboard')}
                         </Link>
                         <Link className="list-group-item list-group-item-action" to="/expert">
-                            Expert
-                            </Link>
+                            {t('Expert')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/services">
-                            Services
-                            </Link>
+                            {t('Services')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/custommerlist">
-                            CustommerList
-                            </Link>
+                            {t('CustommerList')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/invoice">
-                            Invoice
-                            </Link>
+                            {t('Invoice')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/application">
-                            AndroidIOS
+                            {t('AndroidIOS')}
                         </Link>
                         <Link className="list-group-item list-group-item-action" to="/businessprofile">
-                            BusinessProfile
-                            </Link>
+                            {t('BusinessProfile')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/createservice">
-                            CreateService
-                            </Link>
+                            {t('CreateService')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/profile">
-                            Profile
-                            </Link>
+                            {t('Profile')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/scheduling">
-                            Scheduling
-                            </Link>
+                            {t('Scheduling')}
+                        </Link>
                         <Link className="list-group-item list-group-item-action" to="/sessionlist">
-                            SessionList
-                            </Link>
+                            {t('SessionList')}
+                        </Link>
                     </div>
                 </div>
                 <div id="page-content-wrapper">
@@ -121,42 +128,53 @@ class Container extends Component {
                         <button className="btn btn-primary" id="menu-toggle">
                             <FontAwesomeIcon icon={faAlignLeft} />
                         </button>
-                        <button className="btn btn-primary ml-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        {/* <button className="btn btn-primary ml-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
-                        </button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        </button> */}
+                        <div className="collapse navbar-collapse">
                             <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                                 {/* modal */}
                                 <Login />
                                 {/* end modal */}
-                                {this.state.currentUser && (
-                                    <React.Fragment>
-                                        <li className="dropdown">
-                                            <a className="nav-link" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
-                                                <div className="profile" alt="profile"></div>
-                                            </a>
-                                            <div className="color dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                                                <a className="nav-link" href="">
-                                                    <i className="mdi mdi-account-circle"></i>
-                                                    {this.state.currentUser.fullname}
-                                                    <br />
-                                                </a>
-                                                <a className="nav-link" id="linkLogout" href="">
-                                                    <i className="mdi mdi-logout" id=""></i>
-                                                    <Link className="nav-item nav-link" to="/logout">
-                                                        Logout
-                                                    </Link>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </React.Fragment>
-                                )}
+                                <li className="dropdown">
+                                    <a className="nav-link" href="#" data-toggle="dropdown" id="dropdownMenuButton" aria-expanded="false">
+                                        Language
+                                    </a>
+                                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start">
+                                        <a className="dropdown-item" onClick={() => changeLanguage('en')}>England</a>
+                                        <a className="dropdown-item" onClick={() => changeLanguage('de')}>German</a>
+                                        <a className="dropdown-item" onClick={() => changeLanguage('indian')}>Indian</a>
+                                        <a className="dropdown-item" onClick={() => changeLanguage('de')}>China</a>
+                                        <a className="dropdown-item" onClick={() => changeLanguage('Ar')}>Arabic</a>
+                                        <a className="dropdown-item" onClick={() => changeLanguage('Fa')}>Farsi</a>
+                                    </div>
+                                </li>
                                 {!this.state.currentUser && (
-                                    <React.Fragment>
-                                        <a className="nav-link dropdown-toggle" data-toggle="modal" data-target="#myModal">
+                                    <li className="dropdown">
+                                        <a href="#" className="nav-link dropdown-toggle" data-toggle="modal" data-target="#myModal">
                                             LogIn/Register
                                         </a>
-                                    </React.Fragment>
+                                    </li>
+                                )}
+                                {this.state.currentUser && (
+                                    <li className="dropdown">
+                                        <a className="nav-link" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                                            <div className="profile" alt="profile"></div>
+                                        </a>
+                                        <div className="color dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
+                                            <a className="nav-link" href="">
+                                                <i className="mdi mdi-account-circle"></i>
+                                                {this.state.currentUser.fullname}
+                                                <br />
+                                            </a>
+                                            <a className="nav-link" id="linkLogout" href="">
+                                                <i className="mdi mdi-logout" id=""></i>
+                                                <Link className="nav-item nav-link" to="/logout">
+                                                    Logout
+                                                    </Link>
+                                            </a>
+                                        </div>
+                                    </li>
                                 )}
                             </ul>
                         </div>
@@ -189,4 +207,4 @@ class Container extends Component {
     }
 }
 
-export default Container;
+export default withNamespaces()(Container);

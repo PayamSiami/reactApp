@@ -97,3 +97,9 @@ width: 90px;
     min-height: 30px;
     border-radius: 100%;background-image: url(https://demo.iqoop.app/assets/images/ava.png);
   }
+  @media (min-width: 92px){
+  .navbar-expand-lg .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+} 
+}

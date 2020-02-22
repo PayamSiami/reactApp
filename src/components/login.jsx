@@ -70,11 +70,6 @@ class Login extends Form {
                                                 country={'de'}
                                                 value={this.state.phone}
                                                 onChange={value => this.setState({ value })}
-                                            // inputProps={{
-                                            //     name: 'phone',
-                                            //     required: true,
-                                            //     autoFocus: true
-                                            // }}
                                             />
                                             <div className="md-form form-sm">
                                                 {this.renderInput("cellphone_no", "Phone", "number")}

@@ -1,0 +1,14 @@
+{
+  "Welcome to React": "Willkommen bei react und react-i18next",
+  "Home": "Willkommen",
+  "Dashboard": "Instrumententafel",
+  "Expert": "Expertin",
+  "Service": "Bedienung",
+  "CustommerList": "Kundenliste",
+  "Invoice": "Rechnung",
+  "BusinessProfile": "Geschäftsprofil",
+  "CreateService": "Service erstellen",
+  "Profile": "Profil",
+  "Scheduling": "Planung",
+  "SessionList": "Sitzungsliste"
+}

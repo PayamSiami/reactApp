@@ -11,9 +11,11 @@ import UserVerify from './userVrify';
 class Register extends Form {
     state = {
         data: {
-            first_name: "", last_name: "", value: "",
+            first_name: "", last_name: "",
             cellphone_no: "", password: "", confirm_password: ""
         },
+        phone: "",
+        Flag: false,
         errors: {}
     };
 
@@ -22,9 +24,6 @@ class Register extends Form {
             .required()
             .label("cellphone_no"),
         last_name: Joi.string()
-            .required()
-            .label("phone"),
-        phone: Joi.string()
             .required()
             .label("phone"),
         cellphone_no: Joi.string()
@@ -42,6 +41,7 @@ class Register extends Form {
         try {
             const response = await userService.register(this.state.data, this.state.value);
             console.log(response);
+            this.state.Flag = true;
             //auth.loginWithJwt(response.headers["x-auth-token"]);
             //window.location = "/";
         } catch (ex) {
@@ -69,11 +69,6 @@ class Register extends Form {
                         country={'de'}
                         value={this.state.phone}
                         onChange={value => this.setState({ value })}
-                        inputProps={{
-                            name: 'phone',
-                            required: true,
-                            autoFocus: true
-                        }}
                     />
                     <small className="mt-2">
                         We will send SMS  at the number above with a verification code.
@@ -90,15 +85,17 @@ class Register extends Form {
                     <div className="mb-4">
                         <div className="form-check">
                             <input type="checkbox" id="checkbox" className="form-check-input" name="checkbox" />
-                            <label htmlFor="terms">I agree with the <a title="You may read our terms and conditions by clicking on this link">terms and conditions</a> for Registration.
+                            <label htmlFor="terms">I agree with the <a href="" title="You may read our terms and conditions by clicking on this link">terms and conditions</a> for Registration.
                                                 </label>
                         </div>
                     </div>
                     <div className="text-center form-sm mt-2">
-                        <button data-toggle="modal" data-target="#myModal2" className="btn btn-info">Sign up</button>
+                        <button data-toggle="modal" data-target="#myModal2" className="btn btn-info">procceed</button>
                     </div>
                 </form>
-                <UserVerify />
+                {!this.state.Flag && (
+                    <UserVerify />
+                )}
             </>
         );
     }

@@ -22,8 +22,7 @@
     "react-phone-input-2": "^2.11.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
-    "react-toastify": "^5.5.0",
-    "semantic-ui-react": "^0.88.2"
+    "react-toastify": "^5.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
